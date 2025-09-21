@@ -41,6 +41,20 @@ export default function RootLayout({
           <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow">{children}</main>
+            <footer>
+              <div className="w-full bg-[#fafafa] border-t-1 border-gray-100 text-center py-4 mt-8">
+                <p className="text-sm text-gray-600">
+                  &copy; 2025 Plateful. Developed by{" "}
+                  <a
+                    href="https://github.com/alaaahmed149"
+                    target="_blank"
+                    className="text-primary-600"
+                  >
+                    Alaa Ahmed
+                  </a>
+                </p>
+              </div>
+            </footer>
           </div>
         </QueryProvider>
       </body>

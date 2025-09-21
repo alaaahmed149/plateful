@@ -19,6 +19,17 @@ export const getAllRecipes = async (): Promise<ProcessedMeal[]> => {
   }
 };
 
+export const getAllCategories = async (): Promise<string[]> => {
+  try {
+    const response = await fetch(`${BASE_URL}/list.php?c=list`);
+    const data: MealAPIResponse = await response.json();
+    return data.meals ? data.meals.map((meal) => meal.strCategory) : [];
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    return [];
+  }
+};
+
 export const searchRecipes = async (
   query: string
 ): Promise<ProcessedMeal[]> => {
